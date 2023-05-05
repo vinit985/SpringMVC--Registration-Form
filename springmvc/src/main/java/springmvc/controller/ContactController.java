@@ -65,6 +65,10 @@ public class ContactController {
 	public String handleForm(@ModelAttribute User user,Model model)
 	{
         this.UserService.User(user);
+        if(user.getUserName().isBlank())
+        {
+        	return "redirect:/Contact";
+        }
 //     	model.addAttribute("Header", "LearnCodeWith Vinit");
 //		model.addAttribute("desc","Home For Coder");
 		
